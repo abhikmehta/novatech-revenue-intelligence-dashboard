@@ -13,6 +13,12 @@
 | 6 | Support Tickets | "What is the average resolution time, and are any values missing?" | ~1.95 days; 2,941 resolved, 59 missing (2.0%) | `ticket_resolved_date` blank for 59 unresolved tickets | ✅ Match. Exclude nulls from averages and report them as "Unresolved". |
 | 7 | CRM Deals | "How many unique account IDs are in the CRM deals data?" | 85 (ACCT-001 to ACCT-085) | 85 unique `account_id` values | ✅ Match. This confirms the join key range for the unified dataset. |
 | 8 | Marketing + Support | "How many marketing and support rows have account IDs from ACCT-101 to ACCT-115?" | Marketing 150 (6.7%), Support 204 (6.8%) | 150 and 204 orphan rows | ✅ Match. These rows have no CRM match and drop out of a CRM-anchored left join, which is expected. |
+## Evidence Screenshots
+- [NT_00_01_prompt_q1_crm_record_count.png](../screenshots/00_kb_verification/NT_00_01_prompt_q1_crm_record_count.png)
+- [NT_00_02_q2_crm_deal_stages.png](../screenshots/00_kb_verification/NT_00_02_q2_crm_deal_stages.png)
+- [NT_00_03_q3_q4_marketing.png](../screenshots/00_kb_verification/NT_00_03_q3_q4_marketing.png)
+- [NT_00_04_q5_support_priority.png](../screenshots/00_kb_verification/NT_00_04_q5_support_priority.png)
+- [NT_00_05_q6_support_resolution.png](../screenshots/00_kb_verification/NT_00_05_q6_support_resolution.png)
 
 ## Summary of findings
 - **All 8 checks match the Data Dictionary**, so all three knowledge bases are complete and accurate.
