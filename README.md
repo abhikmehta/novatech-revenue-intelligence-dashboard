@@ -9,7 +9,7 @@ NovaTech's revenue data sits in three separate systems: CRM deals, marketing cam
 ## Deliverables Index
 | # | Deliverable | Location | Status |
 |---|---|---|---|
-| 1 | Verification log (6+ entries) | [deliverables/01_verification_log.md](deliverables/01_verification_log.md) | ⬜ |
+| 1 | Verification log (6+ entries) | [deliverables/01_verification_log.md](deliverables/01_verification_log.md) | ✅ |
 | 2 | Data transformation screenshots | [screenshots/](screenshots/) | ⬜ |
 | 3 | Dashboard PDF export (3 sheets) | [deliverables/dashboard_export/](deliverables/dashboard_export/) | ⬜ |
 | 4 | Before/after Topic screenshots | [screenshots/](screenshots/) | ⬜ |
