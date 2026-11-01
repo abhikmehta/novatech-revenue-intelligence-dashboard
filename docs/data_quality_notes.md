@@ -1,8 +1,7 @@
-# Data Quality Notes (from Data Dictionary)
+# Data Quality Notes (from Data Dictionary & SPICE Prep)
 
 | Dataset | Expected rows | Expected columns | Known issues | How handled |
-|---|---|---|---|---|
-| crm_deals | | | | |
-| marketing_campaigns | | | | |
-| support_tickets | | | | |
-
+|:---|:---|:---|:---|:---|
+| `crm_deals` (`novatech_crm_deals.csv`) | 499 | 20 raw / 22 SPICE | 1. `list_price` imported as Integer instead of Decimal/Currency (`NT_05`).<br>2. `loss_reason` is `null` on all 315 Won deals (expected).<br>3. `deal_value` is `$0` on all 184 Lost deals (expected; closed-only pipeline).<br>4. `data_source` column has no analytical value. | 1. Converted `list_price` data type from Integer to Decimal (`Float`) and formatted as Currency (`NT_05`).<br>2. Excluded `data_source` (`NT_06`).<br>3. Added calculated fields `Is Won Deal` (`NT_07`) and `Price Realization Ratio` (`NT_08`), and verified `Days To Close` (`66.76` avg). |
+| `marketing_campaigns` (`novatech_marketing_campaigns.csv`) | 2,240 | 20 raw / 23 SPICE | 1. `annual_income` has 24 `null` values (`1.1%` missing self-reported income).<br>2. 150 rows (`6.7%`) belong to prospect accounts `ACCT-101`–`ACCT-115` with no CRM deal record.<br>3. `data_source` column has no analytical value. | 1. Documented the 24 missing `annual_income` rows in the verification log (`01_verification_log.md`).<br>2. Excluded `data_source`.<br>3. Verified `Campaign ROI` (`-0.90` avg) and `Campaign Spend` (`$12,359,497.34` total) in SPICE and enabled them in the Q Topic (`NT_22`–`NT_25`). |
+| `support_tickets` (`novatech_support_tickets.csv`) | 3,000 (2,996 unique `ticket_id`s) | 20 raw / 22 SPICE | 1. `resolution_date` is `null` on 59 tickets (`2.0%` actively open backlog).<br>2. 204 rows (`6.8%`) belong to accounts `ACCT-101`–`ACCT-115` with no CRM deal record.<br>3. 4 duplicate/repeated `ticket_id` records across 3,000 rows (`2,996` distinct `ticket_id`s). | 1. Verified `2,941` resolved vs. `59` open tickets and `1.95` days average `Resolution Time Days` (`MTTR`).<br>2. Used **Distinct Count** of `ticket_id` and `account_id` on cross-dataset visuals and in Q Topic queries to prevent join fan-out (`65,448` unified rows) and duplicate ID inflation. |
