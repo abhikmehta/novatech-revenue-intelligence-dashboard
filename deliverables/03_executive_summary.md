@@ -1,9 +1,7 @@
 # Deliverable 6 — Dashboard Executive Summary
-**Source:** Auto-generated from the published dashboard [or "Not available"]
+**Source:** Auto-generated from the published dashboard 
 
-[Paste generated summary here]
-
-Marketing Funnel
+Marketing Funnel:-
 The sheet provides a comprehensive overview of marketing campaign performance, tracking leads, spend, funnel progression, and response metrics across multiple campaigns and channels.
 
 Out of 2,240 total campaign leads, only 609 responded, yielding a 27.2% response rate, with the funnel showing strong qualification (848 Qualified Leads) but significant drop-off before closing.
@@ -14,7 +12,8 @@ Total marketing spend reached 12,359,497.34, with Digital Retarget (2,423,781.95
 
 Closed Won deals totaled 412, suggesting an 18.4% lead-to-close conversion from the 2,240 leads
 
-Sales Pipeline
+
+Sales Pipeline:-
 The sheet provides a comprehensive overview of sales pipeline performance, tracking revenue, deal closure timelines, loss reasons, and segment-level breakdowns.
 
 Total closed-won revenue reached 707,201 across 499 pipeline deals, with a strong 63.1% win rate.
@@ -25,7 +24,8 @@ Enterprise and Large segments dominate revenue, contributing 319,423 and 271,613
 
 The least common loss reasons were Budget Constraints (31), Timing Not Right (33), and Competitor Won (34).
 
-Customer Health
+
+Customer Health:-
 The sheet provides an overview of customer support operations, tracking ticket volume, resolution efficiency, priority distribution, and performance across product areas.
 
 A total of 3,000 support tickets were tracked, with an impressive resolution rate of 2,941 resolved and only 59 open.
